@@ -2,6 +2,7 @@
 
 Re-usable dotfiles managed using `rcm`. 
 
-First, install all Homebrew dependencies including `rcm`.
+## Installation
 
-Then, run `./install.sh` to install all dotfiles.
+* First, install Homebrew
+* Then, run `./install.sh` to install all Homebrew dependencies and dotfiles.
