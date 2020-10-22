@@ -1,0 +1,22 @@
+[push]
+	default = simple
+[pull]
+	rebase = false
+[user]
+	email = cristiano@betta.io
+	name = Cristiano Betta
+[core]
+	editor = vim
+	excludesfile = /Users/cbetta/.gitignore
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[credential]
+	helper = cache --timeout=3600
+[url "https://github.com"]
+	insteadOf = git://github.com
+[hub]
+	protocol = ssh
+[init]
+	defaultBranch = main

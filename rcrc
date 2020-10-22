@@ -1,0 +1,3 @@
+EXCLUDES="README.md install.sh"
+SYMLINK_DIRS=""
+
