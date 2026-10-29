@@ -17,6 +17,11 @@ brew "gnupg"
 brew "yamllint"
 brew "rcm"
 
+# Shell
+brew "starship"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
 # Runtimes
 brew "nvm"
 brew "pyenv"
@@ -36,4 +41,5 @@ cask "orbstack"
 cask "1password"
 cask "1password-cli"
 cask "sizeup"
-cask "font-meslo-lg-nerd-font"
+cask "tailscale-app"
+cask "font-jetbrains-mono-nerd-font"
