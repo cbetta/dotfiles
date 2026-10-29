@@ -5,7 +5,7 @@ Re-usable dotfiles managed using `rcm`.
 ## Installation
 
 * First, install [Homebrew](https://brew.sh)
-* Then, clone this repo to `~/.dotfiles` and run `~/.dotfiles/install.sh`
+* Then, clone this repo to `~/personal/dotfiles`, next to the apps, and run `~/personal/dotfiles/install.sh`
 
 This installs everything in the `Brewfile` (CLI tools, Starship, zsh plugins, iTerm2, VS Code, Android Studio, OrbStack, 1Password, Rectangle, Tailscale), Node LTS via nvm, and the latest Python via pyenv, and links the dotfiles into `~` with `rcup`.
 

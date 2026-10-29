@@ -1,3 +1,4 @@
+DOTFILES_DIRS="$HOME/personal/dotfiles"
 EXCLUDES="README.md install.sh rectangle.sh macos-lean.sh macos.sh"
 SYMLINK_DIRS=""
 
