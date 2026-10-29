@@ -11,6 +11,9 @@ curl -fsSL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integrati
 # Dotfiles
 RCRC=rcrc rcup -v
 
+# Rectangle, with the shortcuts I had in SizeUp
+./rectangle.sh
+
 # Node (LTS) and Python (latest)
 export NVM_DIR="$HOME/.nvm"
 mkdir -p $NVM_DIR
