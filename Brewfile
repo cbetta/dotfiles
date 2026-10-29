@@ -17,6 +17,7 @@ brew "gnupg"
 brew "yamllint"
 brew "rcm"
 brew "displayplacer"
+brew "mas"
 
 # Shell
 brew "starship"
@@ -45,3 +46,6 @@ cask "1password-cli"
 cask "rectangle"
 cask "tailscale-app"
 cask "font-jetbrains-mono-nerd-font"
+
+# Mac App Store (signed in to the App Store first; mas asks for your password)
+mas "Amphetamine", id: 937984704
