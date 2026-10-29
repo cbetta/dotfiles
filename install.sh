@@ -23,3 +23,5 @@ nvm install --lts && nvm alias default 'lts/*'
 set -e
 pyenv install --skip-existing 3
 pyenv global "$(pyenv latest 3)"
+
+echo "By hand: System Settings → Spotlight → Search Privacy… → add ~/.gradle, ~/.pyenv and ~/.nvm (see README)"
