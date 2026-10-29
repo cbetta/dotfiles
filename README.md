@@ -11,7 +11,7 @@ This installs everything in the `Brewfile` (CLI tools, Starship, zsh plugins, iT
 
 The Starship prompt uses Nerd Font icons, so set iTerm2's font to JetBrainsMono Nerd Font Mono (Settings → Profiles → Text).
 
-`rectangle.sh` gives Rectangle the window shortcuts I used in SizeUp. Rectangle needs Accessibility access (System Settings → Privacy & Security → Accessibility) before they work.
+`macos.sh` sets macOS preferences I want on every Mac (fast key repeat, so holding backspace clears text quickly); log out and back in for them to apply everywhere. `rectangle.sh` gives Rectangle the window shortcuts I used in SizeUp. Rectangle needs Accessibility access (System Settings → Privacy & Security → Accessibility) before they work.
 
 Keep Spotlight out of the build and runtime caches, tens of thousands of files nobody searches: System Settings → Spotlight → Search Privacy… (at the bottom) → **+** → ⌘⇧G, then add `~/.gradle`, `~/.pyenv` and `~/.nvm`. macOS only allows this by hand, so `install.sh` ends with a reminder.
 

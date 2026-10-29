@@ -11,7 +11,8 @@ curl -fsSL https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integrati
 # Dotfiles
 RCRC=rcrc rcup -v
 
-# Rectangle, with the shortcuts I had in SizeUp
+# macOS preferences, and Rectangle with the shortcuts I had in SizeUp
+./macos.sh
 ./rectangle.sh
 
 # Node (LTS) and Python (latest)
