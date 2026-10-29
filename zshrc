@@ -65,6 +65,11 @@ command -v pyenv >/dev/null && eval "$(pyenv init - zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Android: Android Studio's JDK and the SDK, so ./gradlew, adb and emulator work outside Android Studio
+[[ -d "/Applications/Android Studio.app/Contents/jbr/Contents/Home" ]] && export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+[[ -d $ANDROID_HOME ]] && export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
 # Claude Code against a local model in LM Studio
 export LOCAL_MODEL="qwen/qwen3.6-35b-a3b"
 claude-local() {

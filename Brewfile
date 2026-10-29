@@ -16,6 +16,7 @@ brew "fzf"
 brew "gnupg"
 brew "yamllint"
 brew "rcm"
+brew "displayplacer"
 
 # Shell
 brew "starship"
@@ -37,6 +38,7 @@ brew "tcl-tk"
 # Apps
 cask "iterm2"
 cask "visual-studio-code"
+cask "android-studio"
 cask "orbstack"
 cask "1password"
 cask "1password-cli"
