@@ -1,11 +1,16 @@
 # tabs (prints to the terminal, so run it before anything else)
 [[ -t 1 ]] && tabs -2
 
+# Homebrew, in case zprofile didn't run (non-login shells); Apple silicon or Intel
+if [[ -z $HOMEBREW_PREFIX ]]; then
+  for brew in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    [[ -x $brew ]] && eval "$($brew shellenv)" && break
+  done
+  unset brew
+fi
+
 # Completion
 autoload -Uz compinit && compinit
-
-# Homebrew's prefix, in case zprofile didn't run (non-login shells)
-: ${HOMEBREW_PREFIX:=$(brew --prefix)}
 
 # Plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
