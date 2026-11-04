@@ -14,7 +14,6 @@ autoload -Uz compinit && compinit
 
 # Plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # must be last
 
 # Prompt (config in ~/.config/starship.toml)
 eval "$(starship init zsh)"
@@ -101,3 +100,6 @@ claude-local() {
 
 # Anything only this Mac needs (work tools, installer PATH lines); not in the repo
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Syntax highlighting wraps the ZLE widgets defined so far, so it loads after everything else
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
