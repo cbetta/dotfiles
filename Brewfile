@@ -10,11 +10,14 @@ brew "eza"
 brew "grc"
 brew "httpie"
 brew "jq"
+brew "yq"
 brew "ripgrep"
 brew "fd"
 brew "fzf"
 brew "gnupg"
 brew "yamllint"
+brew "shellcheck"
+brew "wget"
 brew "rcm"
 brew "displayplacer"
 brew "mas"
@@ -46,6 +49,7 @@ cask "1password-cli"
 cask "rectangle"
 cask "tailscale-app"
 cask "font-jetbrains-mono-nerd-font"
+cask "lm-studio" # for claude-local in zshrc
 
 # Mac App Store (signed in to the App Store first; mas asks for your password)
 mas "Amphetamine", id: 937984704

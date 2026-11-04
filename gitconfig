@@ -3,6 +3,9 @@
 	email = cristiano@betta.io
 	# The SSH key in 1Password, which also signs commits and tags
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEekqjaA2iulVyx83nmlRCMwRMRrrAzjukGje+rRWkv6
+# Work repos live in ~/code and commit as Gr4vy; everything else (~/personal) as me
+[includeIf "gitdir:~/code/"]
+	path = ~/.config/git/gr4vy
 [init]
 	defaultBranch = main
 [push]
@@ -12,7 +15,6 @@
 	rebase = false
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
 [url "https://github.com"]

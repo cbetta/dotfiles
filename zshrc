@@ -1,12 +1,19 @@
 # tabs (prints to the terminal, so run it before anything else)
 [[ -t 1 ]] && tabs -2
 
+# Homebrew, in case zprofile didn't run (non-login shells); Apple silicon or Intel
+if [[ -z $HOMEBREW_PREFIX ]]; then
+  for brew in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    [[ -x $brew ]] && eval "$($brew shellenv)" && break
+  done
+  unset brew
+fi
+
 # Completion
 autoload -Uz compinit && compinit
 
 # Plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # must be last
 
 # Prompt (config in ~/.config/starship.toml)
 eval "$(starship init zsh)"
@@ -61,9 +68,16 @@ export NVM_DIR="$HOME/.nvm"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-command -v pyenv >/dev/null && eval "$(pyenv init - zsh)"
+# --no-rehash: a rehash on startup can hang for 60s if a killed one left ~/.pyenv/shims/.pyenv-shim
+# behind. Run `pyenv rehash` after installing a Python or a package that adds executables.
+command -v pyenv >/dev/null && eval "$(pyenv init - zsh --no-rehash)"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+[[ -d $BUN_INSTALL/bin ]] && export PATH="$BUN_INSTALL/bin:$PATH"
+[[ -s $BUN_INSTALL/_bun ]] && source "$BUN_INSTALL/_bun"
 
 # Android: Android Studio's JDK and the SDK, so ./gradlew, adb and emulator work outside Android Studio
 [[ -d "/Applications/Android Studio.app/Contents/jbr/Contents/Home" ]] && export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
@@ -83,3 +97,9 @@ claude-local() {
   CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
   claude --model "$LOCAL_MODEL" --strict-mcp-config --mcp-config '{"mcpServers":{}}' "$@"
 }
+
+# Anything only this Mac needs (work tools, installer PATH lines); not in the repo
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Syntax highlighting wraps the ZLE widgets defined so far, so it loads after everything else
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
