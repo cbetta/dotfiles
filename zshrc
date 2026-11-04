@@ -4,6 +4,9 @@
 # Completion
 autoload -Uz compinit && compinit
 
+# Homebrew's prefix, in case zprofile didn't run (non-login shells)
+: ${HOMEBREW_PREFIX:=$(brew --prefix)}
+
 # Plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # must be last

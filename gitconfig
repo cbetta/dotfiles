@@ -15,7 +15,6 @@
 	rebase = false
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
 [url "https://github.com"]
